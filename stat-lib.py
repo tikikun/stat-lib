@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 from statsmodels.formula.api import ols
-%matplotlib inline
 
 
 def gen_dum(data, dummy_name, condition_name, condition):
