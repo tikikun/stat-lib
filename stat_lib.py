@@ -61,10 +61,10 @@ class lin_reg():
                    scatter_kws={"s": dot_size}, line_kws={"lw": 1})
 
     def grid_4(self, x_name, y_name, dummy_target, condition,
-               extra_dum=None, set_size=3, set_aspect=1):
+               extra_dum=None, set_size=3, set_aspect=1,dot_size=1):
         dummy_var = 'dum_' + dummy_target
         data_dum = gen_dum(self.Data, dummy_var, dummy_target, condition)
         g = sns.FacetGrid(data_dum, row=extra_dum, col=dummy_var,
                           margin_titles=True, size=set_size, aspect=set_aspect)
         g.map(sns.regplot, x_name, y_name, color="black",
-              fit_reg=True, x_jitter=.1, scatter_kws={"s": 1})
+              fit_reg=True, x_jitter=.1, scatter_kws={"s": dot_size})
