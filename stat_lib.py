@@ -6,7 +6,9 @@ from statsmodels.formula.api import ols
 
 
 def gen_dum(data, dummy_name, condition_name, condition):
-    result = data
+    result = pd.DataFrame()
+    for col in data.columns:
+        result[col] = data[col]
     result[dummy_name] = (result[condition_name] > condition).astype(int)
     return result
 
